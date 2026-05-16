@@ -1,4 +1,22 @@
 cff-version: 1.2.0
 type: dataset
+title: Digital Corpus of Sanskrit (link)
+message: If you use this dataset, please cite both the digital edition and the printed source it digitises.
 license: CC-BY-SA-4.0
-repository-code: https://github.com/sanskrit-lexicon/$REPO
+repository-code: https://github.com/sanskrit-lexicon/DCS
+version: 1.0.0
+keywords:
+  - sanskrit
+  - lexicon
+  - cdsl
+  - cologne-digital-sanskrit-lexicon
+  - dictionary
+  - skt-corpus
+authors:
+  - name: "Cologne Digital Sanskrit Lexicon project contributors"
+    website: https://www.sanskrit-lexicon.uni-koeln.de/
+preferred-citation:
+  type: book
+  title: Digital Corpus of Sanskrit (link)
+  authors:
+    - family-names: "Hellwig"
