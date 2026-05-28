@@ -4,16 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**DCS** is a repository for integrating and coordinating data from the [Digital Corpus of Sanskrit (DCS)](http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/) with the Cologne Sanskrit Lexicon project.
+This is a Sanskrit dictionary digitization and corrections repository in the Sanskrit Lexicon project.
 
-The DCS is an annotated corpus of Sanskrit texts maintained at the University of Heidelberg, with grammatical tagging and dictionary cross-references.
+## GitHub Issue Conventions
 
-## Contents
+All issues must have:
+- **Type**: exactly one label (link-target, link-splitting, markup, text-correction, content-enhancement, encoding, scan-quality, bug, question)
+- **Severity**: exactly one label (minor, medium, hard)
+- **Milestone**: one of (Dictionary to Book, Digitization Quality, Structured Data, Major Enhancements)
 
-| File | Purpose |
-|---|---|
-| `DCS-abbreviation-list.txt` | DCS abbreviation list for cross-referencing with CDSL literary sources |
-| `DCS-72034-gramm-tag-stats.csv` | Statistics on 72,034 grammatical tags used in DCS |
-| `DCS-Corpus-Bibliography` | Bibliography file for the DCS corpus texts |
-
-Issues and research tasks are tracked via the [GitHub issue tracker](https://github.com/sanskrit-lexicon/DCS/issues).
+See the Sanskrit Lexicon runbook for full definitions.
