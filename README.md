@@ -1,5 +1,7 @@
 # DCS
 
+_Created: 15-05-2026 · Last updated: 05-07-2026_
+
 Reference data repository for the [Digital Corpus of Sanskrit](http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/) (DCS), part of the [Cologne Digital Sanskrit Lexicons](https://www.sanskrit-lexicon.uni-koeln.de/) project. This repository holds the DCS abbreviation list, corpus bibliography, and grammatical-tag statistics used by the Cologne display infrastructure to resolve `<ls>` citation tags and validate grammar codes across Sanskrit dictionaries.
 
 ## Contents
@@ -22,6 +24,23 @@ Reference data repository for the [Digital Corpus of Sanskrit](http://kjc-fs-clu
 - **Institution**: Cluster of Excellence "Asia and Europe in a Global Context", Heidelberg University
 - **Data exported**: ~72 034 parsed words with grammatical tags, plus abbreviation and bibliography lists
 - **License**: CC BY-SA 4.0
+
+## Usage example
+
+Unlike the printed-dictionary repos in this org, DCS holds tabular reference data (no compiled XML), so `updateByLine.py` does not apply here — corrections are made directly to the data file and delivered by pull request, per [CLAUDE.md § Correction Pattern](CLAUDE.md). A real line from [`DCS-abbreviation-list.txt`](DCS-abbreviation-list.txt):
+
+```
+Amaraughaśāsana	AmŚā
+```
+
+To fix a mis-mapped abbreviation, edit the line directly in a branch and open a PR referencing the issue, e.g.:
+
+```diff
+- Amaraughaśāsana	AmŚā
++ Amaraughaśāsana	AmŚāsana
+```
+
+State the issue number in the PR body; no separate change-file is generated for this repo since there is nothing to re-derive an XML build from.
 
 ## How it works
 
@@ -117,3 +136,5 @@ pie title Issues by type
 
 ---
 *Updated by Cologne Issue Runbook — 2026-05-29*
+
+_Dr. Mārcis Gasūns_
