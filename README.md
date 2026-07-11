@@ -1,46 +1,47 @@
 # DCS
 
-_Created: 15-05-2026 · Last updated: 05-07-2026_
+_Created: 15-05-2026 · Last updated: 11-07-2026_
 
-Reference data repository for the [Digital Corpus of Sanskrit](http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/) (DCS), part of the [Cologne Digital Sanskrit Lexicons](https://www.sanskrit-lexicon.uni-koeln.de/) project. This repository holds the DCS abbreviation list, corpus bibliography, and grammatical-tag statistics used by the Cologne display infrastructure to resolve `<ls>` citation tags and validate grammar codes across Sanskrit dictionaries.
+Reference data repository for the [Digital Corpus of Sanskrit (DCS)](http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/), part of the [Cologne Digital Sanskrit Lexicons](https://www.sanskrit-lexicon.uni-koeln.de/) project. This repository holds the DCS abbreviation list, corpus bibliography, and grammatical-tag statistics used by the Cologne display infrastructure to resolve `<ls>` citation tags and validate grammar codes across Sanskrit dictionaries.
 
 ## Contents
 
-| File / Directory | Description |
+| File | Description |
 |---|---|
-| `DCS-abbreviation-list.txt` | Tab-separated DCS text abbreviations (full title → short code) |
-| `DCS-Corpus-Bibliography` | Free-text bibliography of DCS corpus texts |
-| `DCS-72034-gramm-tag-stats.csv` | ~78 000 word–grammar-tag pairs exported from DCS |
-| `CITATION.cff` | Software citation metadata (cff 1.2.0, CC BY-SA 4.0) |
-| `DATA_DICTIONARY.md` | Schema documentation for CSV and abbreviation files |
-| `CONTRIBUTING.md` | Contribution guidelines |
-| `CODE_OF_CONDUCT.md` | Contributor Covenant 2.1 |
+| [DCS-abbreviation-list.txt](https://github.com/sanskrit-lexicon/DCS/blob/main/DCS-abbreviation-list.txt) | Tab-separated DCS text abbreviations (full title → short code), "Gasuns edition" header |
+| [DCS-Corpus-Bibliography](https://github.com/sanskrit-lexicon/DCS/blob/main/DCS-Corpus-Bibliography) | Free-text bibliography of DCS corpus texts |
+| [DCS-72034-gramm-tag-stats.csv](https://github.com/sanskrit-lexicon/DCS/blob/main/DCS-72034-gramm-tag-stats.csv) | Semicolon-delimited `#;Word;GRAM` table, ~78,761 numbered word–grammar-tag rows (the filename encodes an earlier 72,034-word count) |
+| [DATA_DICTIONARY.md](https://github.com/sanskrit-lexicon/DCS/blob/main/DATA_DICTIONARY.md) | Schema documentation for the CSV and abbreviation files |
+| [CITATION.cff](https://github.com/sanskrit-lexicon/DCS/blob/main/CITATION.cff) | Citation metadata (cff 1.2.0, CC BY-SA 4.0) |
+| [CONTRIBUTING.md](https://github.com/sanskrit-lexicon/DCS/blob/main/CONTRIBUTING.md) | Contribution guidelines |
+| [CODE_OF_CONDUCT.md](https://github.com/sanskrit-lexicon/DCS/blob/main/CODE_OF_CONDUCT.md) | Contributor Covenant 2.1 |
+| [CLAUDE.md](https://github.com/sanskrit-lexicon/DCS/blob/main/CLAUDE.md) | Repo-specific conventions for automated agents |
 
 ## Source
 
 - **Creator**: Oliver Hellwig
 - **Title**: *Digital Corpus of Sanskrit (DCS)*
-- **URL**: <http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/>
+- **URL**: [kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/](http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/)
 - **Institution**: Cluster of Excellence "Asia and Europe in a Global Context", Heidelberg University
-- **Data exported**: ~72 034 parsed words with grammatical tags, plus abbreviation and bibliography lists
-- **License**: CC BY-SA 4.0
+- **Data exported**: parsed words with grammatical tags, plus abbreviation and bibliography lists
+- **License**: [CC BY-SA 4.0](https://github.com/sanskrit-lexicon/DCS/blob/main/LICENSE)
 
-## Usage example
+## Correction pattern
 
-Unlike the printed-dictionary repos in this org, DCS holds tabular reference data (no compiled XML), so `updateByLine.py` does not apply here — corrections are made directly to the data file and delivered by pull request, per [CLAUDE.md § Correction Pattern](CLAUDE.md). A real line from [`DCS-abbreviation-list.txt`](DCS-abbreviation-list.txt):
+Unlike the printed-dictionary repos in this org, DCS holds tabular reference data (no compiled XML), so the [csl-orig correction workflow](https://github.com/sanskrit-lexicon/csl-corrections/blob/main/docs/correction-workflow.md) and its `updateByLine.py` change-file mechanism do not apply here — there is nothing to re-derive an XML build from. Corrections are made directly to the data file in a branch and delivered by pull request, per [CLAUDE.md § Correction Pattern](https://github.com/sanskrit-lexicon/DCS/blob/main/CLAUDE.md).
+
+A real line from [DCS-abbreviation-list.txt](https://github.com/sanskrit-lexicon/DCS/blob/main/DCS-abbreviation-list.txt) (tab-separated title → code):
 
 ```
 Amaraughaśāsana	AmŚā
 ```
 
-To fix a mis-mapped abbreviation, edit the line directly in a branch and open a PR referencing the issue, e.g.:
+To fix a mis-mapped abbreviation, edit the line directly and open a PR that states the issue number in its body:
 
 ```diff
 - Amaraughaśāsana	AmŚā
 + Amaraughaśāsana	AmŚāsana
 ```
-
-State the issue number in the PR body; no separate change-file is generated for this repo since there is nothing to re-derive an XML build from.
 
 ## How it works
 
@@ -57,23 +58,25 @@ flowchart LR
 ## Encoding
 
 - UTF-8 NFC throughout.
-- Sanskrit words in IAST transliteration (ISO 15919) in the CSV and abbreviation list.
-- Grammar codes follow the DCS internal schema; alien/unknown tags are tracked under the `encoding` issue label.
+- Sanskrit words in IAST/ISO-15919 transliteration in the CSV and abbreviation list.
+- Grammar codes follow the DCS internal schema; alien/unknown tags are tracked under the `encoding` and `question` issue labels.
 - Round-trip between DCS grammar codes and Cologne SLP1 is handled at integration time by `csl-app`.
 
 ## Projects & Milestones
 
+As of 11-07-2026 there are **4 open issues and no closed issues**. (Numbers #5–#9 are merged pull requests — Dependabot bumps and a docs PR — not issues; do not count them here.)
+
 | Milestone | Open | Closed | Total |
 |---|---|---|---|
 | Dictionary to Book | 0 | 0 | 0 |
-| Digitization Quality | 3 | 0 | 3 |
+| Digitization Quality | 1 | 0 | 1 |
 | Structured Data | 2 | 0 | 2 |
 | Major Enhancements | 1 | 0 | 1 |
-| **Total** | **6** | **0** | **6** |
+| **Total** | **4** | **0** | **4** |
 
 ```mermaid
 pie title Open issues by milestone
-  "Digitization Quality" : 3
+  "Digitization Quality" : 1
   "Structured Data" : 2
   "Major Enhancements" : 1
 ```
@@ -84,8 +87,6 @@ pie title Open issues by milestone
 
 | # | Title | Type | Severity | Milestone |
 |---|---|---|---|---|
-| [#6](https://github.com/sanskrit-lexicon/DCS/issues/6) | build(deps): bump actions/setup-python from 5 to 6 | bug | minor | Digitization Quality |
-| [#5](https://github.com/sanskrit-lexicon/DCS/issues/5) | build(deps): bump actions/checkout from 4 to 6 | bug | minor | Digitization Quality |
 | [#4](https://github.com/sanskrit-lexicon/DCS/issues/4) | Hellwig's Normalized Lexical Information (1/3 MW) | content-enhancement | hard | Major Enhancements |
 | [#3](https://github.com/sanskrit-lexicon/DCS/issues/3) | Abbreviations of text-names | markup | medium | Structured Data |
 | [#2](https://github.com/sanskrit-lexicon/DCS/issues/2) | Alien Word Grammar Tags (djan vs. djma) | question | minor | Structured Data |
@@ -95,46 +96,21 @@ pie title Open issues by milestone
 
 None yet.
 
-### Issue types (all issues)
+### Open issues by type
 
 ```mermaid
-pie title Issues by type
-  "bug" : 3
+pie title Open issues by type
   "content-enhancement" : 1
   "markup" : 1
   "question" : 1
+  "bug" : 1
 ```
 
-## Labels
-
-### Type labels
-
-| Label | Color | Meaning |
-|---|---|---|
-| `link-target` | `#0075ca` | Building click-throughs from `<ls>` abbreviations to PDFs |
-| `link-splitting` | `#0075ca` | Splitting combined source refs into individual per-page links |
-| `markup` | `#0075ca` | Normalising XML tag content |
-| `text-correction` | `#0075ca` | Corrections to definitions or headwords |
-| `content-enhancement` | `#0075ca` | New material or display upgrades |
-| `encoding` | `#0075ca` | Transcoding, character rendering, dash normalisation |
-| `scan-quality` | `#0075ca` | Replacing blurry or missing scan pages |
-| `bug` | `#0075ca` | Broken links, XML errors, duplicate entries |
-| `question` | `#0075ca` | Scholarly questions requiring research |
-
-### Severity labels
-
-| Label | Color | Meaning |
-|---|---|---|
-| `minor` | `#e4e669` | Targeted, self-contained fix |
-| `medium` | `#fbca04` | Standard unit of work — one batch of corrections |
-| `hard` | `#d93f0b` | Large effort spanning many sources or files |
+The full org issue taxonomy (type labels, severities, milestone assignment) is documented in the [Cologne issue runbook](https://github.com/sanskrit-lexicon/csl-observatory/blob/main/runbook/cologne-tooling-runbook.md).
 
 ## Contributors
 
 - [Oliver Hellwig](https://github.com/OliverHellwig) — original DCS dataset
 - [Cologne Digital Sanskrit Lexicon contributors](https://www.sanskrit-lexicon.uni-koeln.de/) — integration and issue triage
-
----
-*Updated by Cologne Issue Runbook — 2026-05-29*
 
 _Dr. Mārcis Gasūns_
