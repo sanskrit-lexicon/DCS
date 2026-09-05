@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -131,3 +133,5 @@ First line is the header: `DCS abbreviations (Gasuns edition)`.
 3;akac ;m        <- "akac" as masculine (Paninian suffix form)
 4;aka?uka ;adj   <- uncertain form "aka?uka" (? = unclear character), grammar code "adj"
 ```
+
+_Dr. Mārcis Gasūns_
