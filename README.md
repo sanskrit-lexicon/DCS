@@ -1,8 +1,8 @@
 # DCS
 
-_Created: 15-05-2026 · Last updated: 11-07-2026_
+_Created: 16-01-2014 · Last updated: 05-11-2026_
 
-Reference data repository for the [Digital Corpus of Sanskrit (DCS)](http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/), part of the [Cologne Digital Sanskrit Lexicons](https://www.sanskrit-lexicon.uni-koeln.de/) project. This repository holds the DCS abbreviation list, corpus bibliography, and grammatical-tag statistics used by the Cologne display infrastructure to resolve `<ls>` citation tags and validate grammar codes across Sanskrit dictionaries.
+Reference data repository for the Digital Corpus of Sanskrit (DCS), part of the [Cologne Digital Sanskrit Lexicons](https://www.sanskrit-lexicon.uni-koeln.de/) project. This repository holds the DCS abbreviation list, corpus bibliography, and grammatical-tag statistics used by the Cologne display infrastructure to resolve `<ls>` citation tags and validate grammar codes across Sanskrit dictionaries.
 
 ## Contents
 
@@ -21,7 +21,7 @@ Reference data repository for the [Digital Corpus of Sanskrit (DCS)](http://kjc-
 
 - **Creator**: Oliver Hellwig
 - **Title**: *Digital Corpus of Sanskrit (DCS)*
-- **URL**: [kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/](http://kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/)
+- **URL**: `kjc-fs-cluster.kjc.uni-heidelberg.de/dcs/` (offline as of 05-11-2026 — the host no longer resolves in DNS; the dataset lives in this repository)
 - **Institution**: Cluster of Excellence "Asia and Europe in a Global Context", Heidelberg University
 - **Data exported**: parsed words with grammatical tags, plus abbreviation and bibliography lists
 - **License**: [CC BY-SA 4.0](https://github.com/sanskrit-lexicon/DCS/blob/main/LICENSE)
@@ -64,7 +64,7 @@ flowchart LR
 
 ## Projects & Milestones
 
-As of 11-07-2026 there are **4 open issues and no closed issues**. (Numbers #5–#9 are merged pull requests — Dependabot bumps and a docs PR — not issues; do not count them here.)
+As of 05-11-2026 there are **4 open issues and no closed issues**. (Numbers #5–#14 are merged pull requests — Dependabot bumps and docs/tooling PRs — not issues; do not count them here.)
 
 | Milestone | Open | Closed | Total |
 |---|---|---|---|
